@@ -9,6 +9,7 @@ form.addEventListener('submit', runPromises);
 
 function runPromises(evt) {
   evt.preventDefault();
+  evt.target.button.disabled = true;
   let firstDelay = Number(form.delay.value);
   const step = Number(form.step.value);
   const amount = Number(form.amount.value);
@@ -29,6 +30,7 @@ function getPromise(firstDelay, step, amount) {
   if (currentPosition >= amount) {
     clearTimeout(timeout);
     currentPosition = 0;
+    form.button.disabled = false;
   }
 }
 
