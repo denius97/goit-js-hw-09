@@ -54,7 +54,7 @@ function setValues() {
   timerRef.hours.textContent = addLeadingZero(hours);
   timerRef.minutes.textContent = addLeadingZero(minutes);
   timerRef.seconds.textContent = addLeadingZero(seconds);
-  console.log(selectedValue - dateNow);
+
   if (selectedValue - dateNow < 1000) {
     clearInterval(interval);
     Notify.success('Bingo');
